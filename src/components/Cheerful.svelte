@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import Happy from "./Happy.svelte";
+  import { isOneFaceHappy } from "./_utils";
 
   export let username;
 
@@ -14,7 +15,12 @@
       const json = await res.json();
 
       data = json;
+      console.log(data);
+      if (isOneFaceHappy(data.faces)) {
+        document.title = data.user.name + " looks cheerful";
+      }
     } catch (e) {
+      console.error("Error: ", e);
       error = e.message;
     } finally {
       isLoading = false;

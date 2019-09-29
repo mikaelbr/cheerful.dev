@@ -1,15 +1,6 @@
 <script>
   export let faces;
-
-  const happynessFactor = 0.2;
-
-  function isOneFaceHappy(faces) {
-    return faces.some(isHappy);
-  }
-
-  function isHappy(face) {
-    return face.faceAttributes.emotion.happiness >= happynessFactor;
-  }
+  import { isHappy, isOneFaceHappy } from "./_utils";
 </script>
 
 <style>

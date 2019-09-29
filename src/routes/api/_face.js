@@ -18,6 +18,9 @@ export async function getEmotion(image) {
         "Ocp-Apim-Subscription-Key": key
       }
     });
+    if (result.status >= 300) {
+      return [];
+    }
     let json = await result.json();
     return json;
   } catch (e) {
