@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-const key = "d6fecad76c17462f85b8c0574bbe4c07";
+const key = process.env.AZURE_KEY;
 const baseUrl =
   "https://cheerful-dev.cognitiveservices.azure.com/face/v1.0/detect";
 const params =
