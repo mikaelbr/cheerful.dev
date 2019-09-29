@@ -2,7 +2,7 @@
   import Cheerful from "../components/Cheerful.svelte";
 
   const isDev = process.env.NODE_ENV !== "production";
-  const hostname = process.env.HOSTNAME || "localhost:3000";
+  const hostname = process.env.HOSTNAME || "localhost";
   const schema =
     typeof window !== "undefined" ? window.location.protocol : "https";
 
@@ -20,7 +20,11 @@
     if (isDev) {
       document.location = "/" + github;
     } else {
-      document.location = `${schema}//${github}.${hostname}`;
+      let url = `${schema}//${github}.${hostname}`;
+      if (location.port) {
+        url += ":" + location.port;
+      }
+      document.location = url;
     }
   }
 
@@ -28,8 +32,8 @@
     if (typeof location === "undefined") {
       return undefined;
     }
-    let split = location.hostname.split(".");
-    if (split.length <= 1) {
+    let split = location.hostname.split("." + hostname);
+    if (split.length < 2) {
       return undefined;
     }
     return split[0];
