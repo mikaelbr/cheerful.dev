@@ -1,0 +1,8 @@
+{
+  "name": "cheerful-dev",
+  "alias": ["cheerful.dev"],
+  "env": {
+    "HOSTNAME": "cheerful.dev",
+    "AZURE_KEY": "@azure-face-key"
+  }
+}
