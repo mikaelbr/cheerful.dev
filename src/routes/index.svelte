@@ -41,7 +41,61 @@
 </script>
 
 <style>
+  form {
+    margin: auto;
+    width: var(--size__width);
+    max-width: var(--size__maxWidth);
+  }
+  fieldset {
+    border: 0;
+  }
+  legend {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+  }
 
+  .searchInput label {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-content: stretch;
+  }
+  .searchInput input {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    border: 0;
+    outline-offset: -2px;
+
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: var(--color__primaryText);
+  }
+  .searchInput input::placeholder {
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: var(--color__fadedText);
+  }
+  .searchInput button {
+    --background: var(--color__button);
+
+    background: var(--background);
+    border: 0;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1rem;
+    text-align: center;
+
+    max-width: 8rem;
+    cursor: pointer;
+
+    transition: all 500ms ease-in;
+    padding-right: 0.5rem;
+  }
+  .searchInput button:hover {
+    --background: var(--color__buttonHover);
+  }
 </style>
 
 <svelte:head>
@@ -55,20 +109,26 @@
 {#if !username}
   <form action="/" on:submit|preventDefault={redirectToUserpage}>
     <fieldset>
-      <legend>Know a cheerful dev?</legend>
+      <legend>
+        Find a cheerful developer by searching their Github username
+      </legend>
 
-      <label for="github">
-        <h2>Username</h2>
-        <input
-          type="text"
-          name="github"
-          bind:value={github}
-          required
-          id="github"
-          aria-required="true" />
-      </label>
+      <div class="searchInput contentBox">
+        <div class="contentBox__inner">
+          <label for="github">
+            <input
+              type="text"
+              name="github"
+              bind:value={github}
+              required
+              placeholder="Type a Github username"
+              id="github"
+              aria-required="true" />
+          </label>
 
-      <button type="submit">Are they cheerful?</button>
+          <button type="submit">Are they cheerful?</button>
+        </div>
+      </div>
 
       {#if error}
         <p class="error">{error}</p>

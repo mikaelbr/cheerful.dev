@@ -1,6 +1,6 @@
 {
-  "background_color": "#ffffff",
-  "theme_color": "#333333",
+  "background_color": "#F7E5CC",
+  "theme_color": "#383838",
   "name": "Cheerful Developer",
   "short_name": "Cheerful.dev",
   "display": "minimal-ui",
