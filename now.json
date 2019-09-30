@@ -5,6 +5,5 @@
     "HOSTNAME": "cheerful.dev",
     "AZURE_KEY": "@azure-face-key"
   },
-  "builds": [{ "src": "package.json", "use": "now-sapper" }],
-  "routes": [{ "src": "/(.*)", "dest": "__sapper__/build/index.js" }]
+  "builds": [{ "src": "package.json", "use": "now-sapper" }]
 }

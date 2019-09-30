@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "TODO",
+  "name": "cheerful-dev",
+  "description": "Check if a developer looks cherful",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
