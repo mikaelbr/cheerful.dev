@@ -1,7 +1,7 @@
 <script>
   import Cheerful from "../components/Cheerful.svelte";
 
-  const isDev = process.env.NODE_ENV !== "production";
+  const isDev = process.env.NODE_ENV === "development";
   const hostname = process.env.HOSTNAME || "cheerful.dev";
   const schema =
     typeof window !== "undefined" ? window.location.protocol : "https";
