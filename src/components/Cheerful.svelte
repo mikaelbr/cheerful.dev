@@ -20,7 +20,7 @@
 
       data = json;
       if (isOneFaceHappy(data.faces)) {
-        document.title = data.user.name + " looks cheerful";
+        document.title = "@" + data.user.login + " looks cheerful";
       }
     } catch (e) {
       console.error("Error: ", e);
